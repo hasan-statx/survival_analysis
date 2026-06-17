@@ -4,6 +4,8 @@
 **Affiliation:** JiVitA — Johns Hopkins Bloomberg School of Public Health  
 **Stack:** R · survival · survminer · cmprsk · gtsummary · Shiny · ggplot2
 
+[![Live App](https://img.shields.io/badge/Shiny-Live%20Dashboard-2E75B6?style=for-the-badge&logo=r&logoColor=white)](https://connect.posit.cloud/hasan-statx/content/019ed4a0-2fdd-8ad2-191d-9e62029f7621)
+
 ---
 
 ## Overview
