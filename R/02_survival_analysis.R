@@ -20,8 +20,8 @@ suppressPackageStartupMessages({
   library(RColorBrewer)
   library(ggtext)
   library(cmprsk)        # competing risks
-  library(frailtypack)   # frailty/cluster models (if available, else coxme)
   library(kableExtra)
+  library(pammtools)     # geom_stepribbon
 })
 
 # ── Theme & Palette ────────────────────────────────────────────────────────────
@@ -493,10 +493,11 @@ cat("\n── Section 9: Composite Figure ──\n")
 # Rebuild simpler versions for patchwork
 km_df <- surv_summary(fit_km_int, data = df) %>%
   as_tibble() %>%
-  rename(intervention = strata) %>%
   mutate(
-    intervention = str_remove(intervention, "intervention="),
-    surv_pct     = (1 - surv) * 100
+    intervention = if ("intervention" %in% names(.))
+                     intervention
+                   else str_remove(strata, "intervention="),
+    surv_pct = (1 - surv) * 100
   )
 
 p_km_gg <- ggplot(km_df, aes(x = time, y = surv_pct,

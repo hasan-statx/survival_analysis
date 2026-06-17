@@ -198,7 +198,7 @@ indiv <- indiv %>%
       neonatal_death == 1 ~ 0L,
       TRUE ~ rbinom(N, 1,
         prob = plogis(-4.5 + 0.5*low_birthweight + 0.3*food_insecurity
-                      - 0.4*sba + cluster_re*0.3))
+                      - 0.4*skilled_birth_attendant + cluster_re*0.3))
     ),
     postneonatal_death_day = if_else(
       postneonatal_death == 1,
