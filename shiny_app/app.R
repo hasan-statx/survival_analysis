@@ -20,8 +20,8 @@ suppressPackageStartupMessages({
 })
 
 # ── Load data (relative path — run from project root) ─────────────────────────
-df_raw <- read_csv("../data/cohort_baseline.csv", show_col_types = FALSE)
-hb_raw <- read_csv("../data/haemoglobin_longitudinal.csv", show_col_types = FALSE)
+df_raw <- read_csv("data/cohort_baseline.csv", show_col_types = FALSE)
+hb_raw <- read_csv("data/haemoglobin_longitudinal.csv", show_col_types = FALSE)
 
 df <- df_raw %>%
   mutate(
