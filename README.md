@@ -17,7 +17,7 @@ Advanced survival analysis of neonatal mortality in a synthetic cluster-randomis
 | Parameter | Detail |
 |-----------|--------|
 | Study type | Cluster-randomised prospective cohort |
-| N participants | 5,000 pregnant women |
+| N participants | 5,000 pregnant women (Simulated) |
 | N clusters | 50 villages |
 | Districts | Gaibandha, Nilphamari, Lalmonirhat, Kurigram, Rangpur, Sirajganj |
 | Follow-up | Enrolment (~20 wk gestation) → 12 months postpartum |
@@ -96,7 +96,7 @@ install.packages(c(
 # 2. Set working directory to project root
 setwd("path/to/survival_analysis")
 
-# 3. Generate data
+# 3. Generate dummy data locally
 source("R/01_generate_data.R")
 
 # 4. Run analysis & generate all figures
@@ -128,8 +128,7 @@ shiny::runApp("app.R")
 | Severe anaemia vs None | ~1.7 | 1.2–2.5 | 0.003 |
 | Skilled birth attendant | ~0.52 | 0.40–0.68 | <0.001 |
 
-*All values approximate — generated from synthetic data for demonstration.*
-
+⚠️ **Important Note:** All values and hazard ratios listed above are approximate and simulated using the `simsurv` package for portfolio demonstration. They do not represent actual clinical trial findings.
 ---
 
 ## Skills Demonstrated
